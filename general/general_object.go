@@ -44,7 +44,7 @@ func (m Map) MarshalJSON() ([]byte, error) {
 		key, ok := k.(string)
 		if !ok {
 			fmt.Printf("json: key must be string, got %T\n", k)
-			key = fmt.Sprintf("_%T", key)
+			key = fmt.Sprintf("_%v", k)
 		}
 		tmp[key] = v
 	}
