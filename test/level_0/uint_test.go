@@ -1,26 +1,32 @@
 package test
 
 import (
+	"context"
 	"testing"
-	"github.com/stretchr/testify/require"
+
 	"github.com/KhoalaS/thrifter/test"
+	"github.com/stretchr/testify/require"
 )
 
 func Test_decode_uint(t *testing.T) {
+	ctx := context.TODO()
+
 	should := require.New(t)
 	for _, c := range test.Combinations {
 		buf, proto := c.CreateProtocol()
-		proto.WriteI64(1024)
+		proto.WriteI64(ctx, 1024)
 		iter := c.CreateIterator(buf.Bytes())
 		should.Equal(uint(1024), iter.ReadUint())
 	}
 }
 
 func Test_unmarshal_uint(t *testing.T) {
+	ctx := context.TODO()
+
 	should := require.New(t)
 	for _, c := range test.UnmarshalCombinations {
 		buf, proto := c.CreateProtocol()
-		proto.WriteI64(1024)
+		proto.WriteI64(ctx, 1024)
 		var val uint
 		should.NoError(c.Unmarshal(buf.Bytes(), &val))
 		should.Equal(uint(1024), val)

@@ -1,17 +1,21 @@
 package test
 
 import (
+	"context"
 	"testing"
-	"github.com/stretchr/testify/require"
+
 	"github.com/KhoalaS/thrifter/test"
 	"github.com/KhoalaS/thrifter/test/level_0/enum_test"
+	"github.com/stretchr/testify/require"
 )
 
 func Test_unmarshal_enum(t *testing.T) {
+	ctx := context.TODO()
+
 	should := require.New(t)
 	for _, c := range test.UnmarshalCombinations {
 		buf, proto := c.CreateProtocol()
-		proto.WriteI32(1)
+		proto.WriteI32(ctx, 1)
 		var val enum_test.Player
 		should.NoError(c.Unmarshal(buf.Bytes(), &val))
 		should.Equal(enum_test.Player_FLASH, val)

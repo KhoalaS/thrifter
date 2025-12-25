@@ -20,10 +20,12 @@ func Test_decode_int(t *testing.T) {
 }
 
 func Test_unmarshal_int(t *testing.T) {
+	ctx := context.TODO()
+
 	should := require.New(t)
 	for _, c := range test.UnmarshalCombinations {
 		buf, proto := c.CreateProtocol()
-		proto.WriteI64(-1)
+		proto.WriteI64(ctx, -1)
 		var val int
 		should.NoError(c.Unmarshal(buf.Bytes(), &val))
 		should.Equal(int(-1), val)
