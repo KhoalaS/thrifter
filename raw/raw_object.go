@@ -1,6 +1,6 @@
 package raw
 
-import "github.com/thrift-iterator/go/protocol"
+import "github.com/KhoalaS/thrifter/protocol"
 
 type StructField struct {
 	Buffer []byte

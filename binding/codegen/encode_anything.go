@@ -3,7 +3,7 @@ package codegen
 import (
 	"reflect"
 	"github.com/v2pro/wombat/generic"
-	"github.com/thrift-iterator/go/protocol"
+	"github.com/KhoalaS/thrifter/protocol"
 )
 
 func dispatchEncode(extension *Extension, srcType reflect.Type) (string, protocol.TType) {

@@ -1,10 +1,11 @@
 package reflection
 
 import (
-	"unsafe"
-	"github.com/thrift-iterator/go/spi"
 	"reflect"
-	"github.com/thrift-iterator/go/protocol"
+	"unsafe"
+
+	"github.com/KhoalaS/thrifter/protocol"
+	"github.com/KhoalaS/thrifter/spi"
 )
 
 type sliceEncoder struct {

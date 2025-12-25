@@ -1,9 +1,9 @@
 package thrifter
 
 import (
-	"github.com/thrift-iterator/go/general"
-	"github.com/thrift-iterator/go/protocol"
-	"github.com/thrift-iterator/go/spi"
+	"github.com/KhoalaS/thrifter/general"
+	"github.com/KhoalaS/thrifter/protocol"
+	"github.com/KhoalaS/thrifter/spi"
 	"io"
 	"reflect"
 )

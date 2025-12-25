@@ -1,14 +1,15 @@
 package test
 
 import (
-	"testing"
-	"encoding/hex"
-	"github.com/stretchr/testify/require"
-	"github.com/thrift-iterator/go"
-	"fmt"
-	"github.com/thrift-iterator/go/protocol"
 	"bytes"
-	"github.com/thrift-iterator/go/general"
+	"encoding/hex"
+	"fmt"
+	"testing"
+
+	"github.com/KhoalaS/thrifter"
+	"github.com/KhoalaS/thrifter/general"
+	"github.com/KhoalaS/thrifter/protocol"
+	"github.com/stretchr/testify/require"
 )
 
 type combination struct {

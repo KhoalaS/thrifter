@@ -3,18 +3,19 @@ package thrifter
 import (
 	"encoding/json"
 	"errors"
-	"github.com/thrift-iterator/go/binding/codegen"
-	"github.com/thrift-iterator/go/binding/reflection"
-	"github.com/thrift-iterator/go/general"
-	"github.com/thrift-iterator/go/protocol"
-	"github.com/thrift-iterator/go/protocol/binary"
-	"github.com/thrift-iterator/go/protocol/compact"
-	"github.com/thrift-iterator/go/raw"
-	"github.com/thrift-iterator/go/spi"
-	"github.com/v2pro/wombat/generic"
 	"io"
 	"reflect"
 	"sync"
+
+	"github.com/KhoalaS/thrifter/binding/codegen"
+	"github.com/KhoalaS/thrifter/binding/reflection"
+	"github.com/KhoalaS/thrifter/general"
+	"github.com/KhoalaS/thrifter/protocol"
+	"github.com/KhoalaS/thrifter/protocol/binary"
+	"github.com/KhoalaS/thrifter/protocol/compact"
+	"github.com/KhoalaS/thrifter/raw"
+	"github.com/KhoalaS/thrifter/spi"
+	"github.com/v2pro/wombat/generic"
 )
 
 type frozenConfig struct {

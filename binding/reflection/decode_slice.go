@@ -2,7 +2,7 @@ package reflection
 
 import (
 	"unsafe"
-	"github.com/thrift-iterator/go/spi"
+	"github.com/KhoalaS/thrifter/spi"
 	"reflect"
 )
 

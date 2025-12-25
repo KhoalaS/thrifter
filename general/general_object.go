@@ -1,6 +1,6 @@
 package general
 
-import "github.com/thrift-iterator/go/protocol"
+import "github.com/KhoalaS/thrifter/protocol"
 
 type Object interface {
 	Get(path ...interface{}) interface{}

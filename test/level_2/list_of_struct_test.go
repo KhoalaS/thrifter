@@ -3,11 +3,11 @@ package test
 import (
 	"testing"
 	"github.com/stretchr/testify/require"
-	"git.apache.org/thrift.git/lib/go/thrift"
-	"github.com/thrift-iterator/go/protocol"
-	"github.com/thrift-iterator/go/test"
-	"github.com/thrift-iterator/go/test/level_2/list_of_struct_test"
-	"github.com/thrift-iterator/go/general"
+	"github.com/apache/thrift/lib/go/thrift"
+	"github.com/KhoalaS/thrifter/protocol"
+	"github.com/KhoalaS/thrifter/test"
+	"github.com/KhoalaS/thrifter/test/level_2/list_of_struct_test"
+	"github.com/KhoalaS/thrifter/general"
 )
 
 func Test_skip_list_of_struct(t *testing.T) {

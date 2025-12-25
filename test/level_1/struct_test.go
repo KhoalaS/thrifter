@@ -2,13 +2,13 @@ package test
 
 import (
 	"testing"
-	"git.apache.org/thrift.git/lib/go/thrift"
+	"github.com/apache/thrift/lib/go/thrift"
 	"github.com/stretchr/testify/require"
-	"github.com/thrift-iterator/go/protocol"
-	"github.com/thrift-iterator/go/test"
-	"github.com/thrift-iterator/go/test/level_1/struct_test"
-	"github.com/thrift-iterator/go/general"
-	"github.com/thrift-iterator/go/raw"
+	"github.com/KhoalaS/thrifter/protocol"
+	"github.com/KhoalaS/thrifter/test"
+	"github.com/KhoalaS/thrifter/test/level_1/struct_test"
+	"github.com/KhoalaS/thrifter/general"
+	"github.com/KhoalaS/thrifter/raw"
 )
 
 func Test_decode_struct_by_iterator(t *testing.T) {

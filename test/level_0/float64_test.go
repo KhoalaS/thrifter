@@ -3,7 +3,7 @@ package test
 import (
 	"testing"
 	"github.com/stretchr/testify/require"
-	"github.com/thrift-iterator/go/test"
+	"github.com/KhoalaS/thrifter/test"
 )
 
 func Test_decode_float64(t *testing.T) {

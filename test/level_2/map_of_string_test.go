@@ -3,9 +3,9 @@ package test
 import (
 	"testing"
 	"github.com/stretchr/testify/require"
-	"git.apache.org/thrift.git/lib/go/thrift"
-	"github.com/thrift-iterator/go/test"
-	"github.com/thrift-iterator/go/general"
+	"github.com/apache/thrift/lib/go/thrift"
+	"github.com/KhoalaS/thrifter/test"
+	"github.com/KhoalaS/thrifter/general"
 )
 
 func Test_skip_map_of_string_key(t *testing.T) {

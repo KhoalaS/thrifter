@@ -2,7 +2,7 @@ package codegen
 
 import (
 	"reflect"
-	"github.com/thrift-iterator/go/protocol"
+	"github.com/KhoalaS/thrifter/protocol"
 	"strings"
 	"strconv"
 )

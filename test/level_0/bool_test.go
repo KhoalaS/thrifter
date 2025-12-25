@@ -1,38 +1,42 @@
 package test
 
 import (
-	"github.com/stretchr/testify/require"
-	"github.com/thrift-iterator/go/test"
+	"context"
 	"testing"
+
+	"github.com/KhoalaS/thrifter/test"
+	"github.com/stretchr/testify/require"
 )
 
 func Test_decode_bool(t *testing.T) {
+	ctx := context.TODO()
 	should := require.New(t)
 	for _, c := range test.Combinations {
 		buf, proto := c.CreateProtocol()
-		proto.WriteBool(true)
+		proto.WriteBool(ctx, true)
 		iter := c.CreateIterator(buf.Bytes())
 		should.Equal(true, iter.ReadBool())
 
 		buf, proto = c.CreateProtocol()
-		proto.WriteBool(false)
+		proto.WriteBool(ctx, false)
 		iter = c.CreateIterator(buf.Bytes())
 		should.Equal(false, iter.ReadBool())
 	}
 }
 
 func Test_unmarshal_bool(t *testing.T) {
+	ctx := context.TODO()
 	should := require.New(t)
 	for _, c := range test.UnmarshalCombinations {
 		buf, proto := c.CreateProtocol()
 		var val1 bool
-		proto.WriteBool(true)
+		proto.WriteBool(ctx, true)
 		should.NoError(c.Unmarshal(buf.Bytes(), &val1))
 		should.Equal(true, val1)
 
 		buf, proto = c.CreateProtocol()
 		var val2 bool = true
-		proto.WriteBool(false)
+		proto.WriteBool(ctx, false)
 		should.NoError(c.Unmarshal(buf.Bytes(), &val2))
 		should.Equal(false, val2)
 	}

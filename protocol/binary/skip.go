@@ -1,6 +1,6 @@
 package binary
 
-import "github.com/thrift-iterator/go/protocol"
+import "github.com/KhoalaS/thrifter/protocol"
 
 func (iter *Iterator) skip(skipper func(), space []byte) []byte {
 	var tmp []byte
