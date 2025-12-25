@@ -1,6 +1,11 @@
 package general
 
-import "github.com/KhoalaS/thrifter/protocol"
+import (
+	"encoding/json"
+	"fmt"
+
+	"github.com/KhoalaS/thrifter/protocol"
+)
 
 type Object interface {
 	Get(path ...interface{}) interface{}
@@ -30,6 +35,20 @@ func (obj Map) Get(path ...interface{}) interface{} {
 		return elem
 	}
 	return elem.(Object).Get(path[1:]...)
+}
+
+func (m Map) MarshalJSON() ([]byte, error) {
+	tmp := make(map[string]any)
+
+	for k, v := range m {
+		key, ok := k.(string)
+		if !ok {
+			return nil, fmt.Errorf("json: key must be string, got %T", k)
+		}
+		tmp[key] = v
+	}
+
+	return json.Marshal(tmp)
 }
 
 type Struct map[protocol.FieldId]interface{}
