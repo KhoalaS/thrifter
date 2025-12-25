@@ -43,7 +43,8 @@ func (m Map) MarshalJSON() ([]byte, error) {
 	for k, v := range m {
 		key, ok := k.(string)
 		if !ok {
-			return nil, fmt.Errorf("json: key must be string, got %T", k)
+			fmt.Printf("json: key must be string, got %T\n", k)
+			key = fmt.Sprintf("_%T", key)
 		}
 		tmp[key] = v
 	}
